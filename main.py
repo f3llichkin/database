@@ -2,7 +2,8 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-# Вставляем данные в таблицу
+# Вставляем данные в таблицу 
+#created by f3llichkin dev//Александр Савёлов
 import sqlite3
 import time
 def connection():
@@ -89,7 +90,7 @@ def search_top_group_info(connection):
         BandName=str(row[0])
     cursor.execute("SELECT Name FROM Repertuar WHERE Grouppa=?",(BandName,))
     Tracks=cursor.fetchall()
-    print("На данный момент чарт возглавляет группа "+BandName+", в ее репертуар входят песни:")
+    print("На данный момент чарт возглавляет группа базу данных создал Савёлов Александр"+BandName+", в ее репертуар входят песни:")
     for row in Tracks:
         count=count+1
         print(str(count)+". "+row[0])
@@ -114,6 +115,7 @@ def search_info_by_song(connection):
     for row in record:
         print("Название песни: "+row[0]+". Группа: "+row[1]+". Автор: "+row[2]+" Год выхода: "+str(row[3])+". Композитор: "+row[4])
     counter=0
+    #created by f3llichkin dev//Александр Савёлов
     connection.commit()
     connection.close()
 def print_report_Topthree(connection):
@@ -134,6 +136,7 @@ def print_report_Topthree(connection):
         print("Тройку чарта замыкает группа  $" + row[0] + "$!!!!")
     print('----------')
     connection.commit()
+    #created by f3llichkin dev//Александр Савёлов
     connection.close()
 def print_report_gastroli(connection):
     print('----------')
@@ -155,6 +158,7 @@ def print_report_gastroli(connection):
             print(str(count)+". "+repertuar[0]+". Автор: "+repertuar[2])
             count=count+1
         print('----------')
+    #created by f3llichkin dev//Александр Савёлов
     connection.commit()
     connection.close()
 
@@ -166,6 +170,8 @@ def console_picture():
     print("            **    **  **        **        **         **      **  ")
     print("           **    **  ********  ********  ********    **    **   ")
     print("          **    **  ********  ********  ********       **      ")
+    print(" created by f3llichkin dev//Александр Савёлов   ")
+    
 
 def menu():
     operation = int(input('Введите номер операции\n'
